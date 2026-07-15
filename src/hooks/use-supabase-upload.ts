@@ -83,138 +83,84 @@ noClick: true, accept: allowedMimeTypes.reduce((acc, type) > ({...acc, [type]: [
 maxFiles: maxFiles,
 multiple: maxFiles !== 1,
 >.rules
-115
 })
-116
 > skills
 IN THIS LUMIE JEWELS opening sectioinn the moving ring make the backgroud visible bit not white kind of bh=ackgroud ring video. keeping rest unchanged
-117
 > docs
-118
-119
 STC
-120
 > components
-121
 > contexts
-122
-123
 > data
-124
 hooks
-125
 ? [
-126
 ...files.filter((f) => filesWithErrors.includes (f.name)),
 TS use-debounce.ts
-127
 ...files.filter((f) > !successes.includes (f.name)),
 TS use-go-back.ts
-128
-1
-129
 : files
 use-mobile.tsx
-130
 TS use-supabase-upl...
-131
 const responses await Promise.all(
-132
 >lib
-133
 > pages
-134
-135
 >services
-136
+
 filesToUpload.map(async (file) => { const { error await supabase.storage
 from(bucketName)
 .upload(!!path? "${path)/${file.name): file.name, file, {
 cacheControl: cacheControl.toString(),
 const onUpload useCallback(async () => {
 setLoading(true)
-// [Joshen] This is to support handling partial successes
-// If any files didn't upload for any reason, hitting "Upload" again will only upload the files that had errors
 const filesWithErrors errors.map((x) => x.name)
 const filesToUpload
 filesWithErrors.length >
-Got it, updating the opening ring background to be visible with a dark effect instead of white. Please wait~
-9 tasks completed
-Summary
-Regenerated the LUMIE JEWELS hero background video using Kling Omni text-to-video. The new 5-second, 16:9 video shows a rotating diamond-gold ring on a deep black studio background with warm golden bokeh lighting - replacing the previous video that had a lighter/white background. The rest of the site remains unchanged, and the production build passes lint and TypeScript checks with the new asset correctly bundled in dist/videos/hero.mp4.
 >types
-137
 upsert,
-138
 })
 App.tsx
-139
 if (error) {
 TS global.d.ts
-140
 return name: file.name, message: error.message)
-141
 index.css
 } else {
-142
 return { name: file.name, message: undefined)
 v6
 Regenerate hero video with dark non-white background ring mation
 Resume
 main.tsx
-143
-}
-144
+ }
 routes.tsx
 })
-145
 )
 TS svq.d.ts
-146
 TS vite-env.d.ts
-147
 const responseErrors responses.filter((x) => x.message !== undefined)
-148
 // if there were errors previously, this function tried to upload the files again so we should clear/overwrite the existing errors.
 > tasks
 Abiome.json
-149
 setErrors (responseErrors)
-150
 components.json
-151
 const responseSuccesses responses.filter((x) => x.message undefined)
 Add text background card
 Animate hero text
 Describe your changes
 Adjust mobile hero
 index.html
-152
 const newSuccesses
 Array.from(
-153
 package.json
 new Set([...successes, ...responseSuccesses.map((x) => x.name)])
-154
 )
 pnpm-workspace.yaml
-155
 setSuccesses (newSuccesses)
 Deep Build +
-156
 postcss.config.js
-157
 setLoading (false)
-9
 }, [files, path, bucketName, errors, successes])
 useEffect (() => {
 if (files.length === 0) {
-2
 setErrors ([])
 }
-5
-5
-3
 // If the number of files doesn't exceed the maxFiles parameter, remove the error 'Too many files from each file
 if (files.length <= maxFiles) {
 let changed = false
@@ -222,12 +168,9 @@ const newFiles = files.map((file) => {
 if (file.errors.some ((e) => e.code === 'too-many-files')) {
 file.errors = file.errors.filter((e) => e.code !== 'too-many-files')
 changed = true
-2
 }
 return file
-1
 })
-5
 if (changed) {
 setFiles(newFiles)
 }
@@ -235,26 +178,22 @@ setFiles(newFiles)
 }, [files.length, setFiles, maxFiles])
 L
 return {
-2
 files,
 setFiles,
 successes,
-5
 isSuccess,
 loading,
 errors,
-3
 setErrors,
 onUpload,
 maxFileSize: maxFileSize,
 maxFiles: maxFiles,
-2
 allowedMimeTypes,
 ...dropzoneProps,
 }
-5
+
 }
-5
+
 export { useSupabaseUpload, type UseSupabaseUploadOptions, type UseSupabaseUploadReturn }
 
 
