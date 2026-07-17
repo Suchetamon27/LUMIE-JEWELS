@@ -6,7 +6,8 @@ import path from "path";
 export default defineConfig({
   plugins: [
  react(),
-    svgr({
+  base: '/',
+      svgr({
       svgrOptions: {
         icon: true,
         exportType: "named",
